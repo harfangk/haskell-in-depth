@@ -69,31 +69,32 @@ executables:
         dependencies:
           - text
           - fmt
-    # # Chapter 2
+    # Chapter 2
     # 2.1
-    # radar:
-    #     source-dirs: ch02/radar
-    #     main: Main.hs
-    #     other-modules: Radar
-    #     other-extensions:
-    #       - DeriveAnyClass
-    #     dependencies:
-    #       - fmt >=0.5 && <0.7
-    # # 2.2
-    # person-derived:
-    #     source-dirs: ch02/person
-    #     main: derived-show.hs
-    #     other-modules: Person
-    # person-implemented:
-    #     source-dirs: ch02/person
-    #     main: implemented-show.hs
-    #     other-modules: Person
-    # person-text:
-    #     source-dirs: ch02/person
-    #     main: text-show.hs
-    #     other-modules: Person
-    #     dependencies:
-    #       - text-show >=3.0 && <4
+    radar:
+        source-dirs: ch02/radar
+        main: Main.hs
+        other-modules: Radar
+        default-extensions:
+          - DeriveAnyClass
+          - OverloadedStrings
+        dependencies:
+          - fmt
+    # 2.2
+    person-derived:
+      source-dirs: ch02/person
+      main: derived-show.hs
+      other-modules: Person
+    person-implemented:
+      source-dirs: ch02/person
+      main: implemented-show.hs
+      other-modules: Person
+    person-text:
+      source-dirs: ch02/person
+      main: text-show.hs
+      other-modules: Person
+      dependencies:
+        - text-show
     # # Chapter 3
     # stockquotes:
     #     source-dirs: stockquotes
@@ -734,24 +735,26 @@ executables:
     #     - stm-chans >= 3.0 && < 3.1
     #   ghc-options:
     #     -threaded
-# internal-libraries:
+internal-libraries:
     # Chapter 2
-    # radar-lib:
-    #     source-dirs: ch02/radar
-    #     exposed-modules: Radar
-    #     other-modules: []
-    # expr-simple:
-    #     source-dirs: expr
-    #     exposed-modules: Expr
-    #     other-modules: []
-    #     dependencies:
-    #       - text-show >= 3.0 && < 4
-    # contexts:
-    #     source-dirs: ch02
-    #     exposed-modules: Contexts
-    #     other-modules: []
-    #     dependencies:
-    #       - mtl >=2.0 && <2.3
+    radar-lib:
+      source-dirs: ch02/radar
+      exposed-modules: Radar
+      other-modules: []
+    expr-simple:
+      source-dirs: expr
+      exposed-modules: Expr
+      other-modules: []
+      dependencies:
+        - text-show
+      default-extensions:
+        - OverloadedStrings
+    contexts:
+      source-dirs: ch02
+      exposed-modules: Contexts
+      other-modules: []
+      dependencies:
+        - mtl
     # # Chapter 5
     # shunting-yard:
     #     source-dirs: expr
@@ -810,23 +813,23 @@ executables:
     #     - template-haskell >= 2.13 && <2.17
     #     - haskell-src-exts >= 1.20 && <1.24
     #     - haskell-src-meta >= 0.6 && < 0.9
-# tests:
+tests:
     # Chapter 2
-    # radar-test:
-    #     source-dirs: tests/radar
-    #     main: Test.hs
-    #     other-modules: []
-    #     dependencies:
-    #       - radar-lib
-    #       - random >=1.2 && <1.3
-    # expr-simple-test:
-    #     source-dirs: tests/expr
-    #     main: Test1.hs
-    #     other-modules: []
-    #     dependencies:
-    #       - expr-simple
-    #       - hint >=0.7 && <0.10
-    #       - text-show >=3.0 && <4
+    radar-test:
+        source-dirs: tests/radar
+        main: Test.hs
+        other-modules: []
+        dependencies:
+          - radar-lib
+          - random
+    expr-simple-test:
+        source-dirs: tests/expr
+        main: Test1.hs
+        other-modules: []
+        dependencies:
+          - expr-simple
+          - hint
+          - text-show
     # # Chapter 5
     # shunting-yard-test:
     #     source-dirs: tests/expr

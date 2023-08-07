@@ -1,4 +1,4 @@
-cabal-version: 1.12
+cabal-version: 2.0
 
 -- This file has been generated from package.yaml by hpack version 0.35.2.
 --
@@ -64,11 +64,94 @@ library
       base >=4.12
   default-language: Haskell2010
 
+library contexts
+  exposed-modules:
+      Contexts
+  hs-source-dirs:
+      ch02
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
+  build-depends:
+      base >=4.12
+    , mtl
+  default-language: Haskell2010
+
+library expr-simple
+  exposed-modules:
+      Expr
+  hs-source-dirs:
+      expr
+  default-extensions:
+      OverloadedStrings
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
+  build-depends:
+      base >=4.12
+    , text-show
+  default-language: Haskell2010
+
+library radar-lib
+  exposed-modules:
+      Radar
+  hs-source-dirs:
+      ch02/radar
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
+  build-depends:
+      base >=4.12
+  default-language: Haskell2010
+
 executable hello
   main-is: intro/hello.hs
   ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
   build-depends:
       base >=4.12
+  default-language: Haskell2010
+
+executable person-derived
+  main-is: derived-show.hs
+  other-modules:
+      Person
+  hs-source-dirs:
+      ch02/person
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
+  build-depends:
+      base >=4.12
+  default-language: Haskell2010
+
+executable person-implemented
+  main-is: implemented-show.hs
+  other-modules:
+      Person
+  hs-source-dirs:
+      ch02/person
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
+  build-depends:
+      base >=4.12
+  default-language: Haskell2010
+
+executable person-text
+  main-is: text-show.hs
+  other-modules:
+      Person
+  hs-source-dirs:
+      ch02/person
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
+  build-depends:
+      base >=4.12
+    , text-show
+  default-language: Haskell2010
+
+executable radar
+  main-is: Main.hs
+  other-modules:
+      Radar
+  hs-source-dirs:
+      ch02/radar
+  default-extensions:
+      DeriveAnyClass
+      OverloadedStrings
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
+  build-depends:
+      base >=4.12
+    , fmt
   default-language: Haskell2010
 
 executable vocab1
@@ -102,4 +185,29 @@ executable vocab3
       base >=4.12
     , fmt
     , text
+  default-language: Haskell2010
+
+test-suite expr-simple-test
+  type: exitcode-stdio-1.0
+  main-is: Test1.hs
+  hs-source-dirs:
+      tests/expr
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
+  build-depends:
+      base >=4.12
+    , expr-simple
+    , hint
+    , text-show
+  default-language: Haskell2010
+
+test-suite radar-test
+  type: exitcode-stdio-1.0
+  main-is: Test.hs
+  hs-source-dirs:
+      tests/radar
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
+  build-depends:
+      base >=4.12
+    , radar-lib
+    , random
   default-language: Haskell2010
