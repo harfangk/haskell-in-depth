@@ -55,20 +55,20 @@ executables:
         main: vocab1.hs
         other-modules: []
         dependencies: text
-    # vocab2:
-    #     source-dirs: ch01
-    #     main: vocab2.hs
-    #     other-modules: []
-    #     dependencies: text
-    # vocab3:
-    #     source-dirs: ch01
-    #     main: vocab3.hs
-    #     other-modules: []
-    #     other-extensions:
-    #       - OverloadedStrings
-    #     dependencies:
-    #       - text >=1.2 && <1.3
-    #       - fmt >=0.5 && <0.7
+    vocab2:
+        source-dirs: ch01
+        main: vocab2.hs
+        other-modules: []
+        dependencies: text
+    vocab3:
+        source-dirs: ch01
+        main: vocab3.hs
+        other-modules: []
+        default-extensions:
+          - OverloadedStrings
+        dependencies:
+          - text
+          - fmt
     # # Chapter 2
     # 2.1
     # radar:
