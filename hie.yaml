@@ -1,0 +1,2 @@
+cradle:
+  stack: {component: "hid-examples:exe:hello"}
