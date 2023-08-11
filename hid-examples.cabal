@@ -98,8 +98,110 @@ library radar-lib
       base >=4.12
   default-language: Haskell2010
 
+library shunting-yard
+  exposed-modules:
+      ShuntingYard, Expr
+  hs-source-dirs:
+      expr
+  default-extensions:
+      OverloadedStrings
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
+  build-depends:
+      base >=4.12
+    , expr-simple
+    , mtl >=2.0 && <2.3
+    , text-show >=3.0 && <4
+  default-language: Haskell2010
+
+executable dicegame
+  main-is: dicegame.hs
+  other-modules:
+      Paths_hid_examples
+  autogen-modules:
+      Paths_hid_examples
+  hs-source-dirs:
+      ch05
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
+  build-depends:
+      base >=4.12
+    , mtl >=2.0 && <2.3
+    , random ==1.2.*
+  default-language: Haskell2010
+
+executable filecount
+  main-is: filecount.hs
+  other-modules:
+      Paths_hid_examples
+  autogen-modules:
+      Paths_hid_examples
+  hs-source-dirs:
+      ch05
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
+  build-depends:
+      base >=4.12
+    , extra >=1.5 && <1.8
+  default-language: Haskell2010
+
+executable gcd
+  main-is: gcd.hs
+  other-modules:
+      Paths_hid_examples
+  autogen-modules:
+      Paths_hid_examples
+  hs-source-dirs:
+      ch05
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
+  build-depends:
+      base >=4.12
+    , mtl >=2.0 && <2.3
+  default-language: Haskell2010
+
+executable genSQL
+  main-is: genSQL.hs
+  other-modules:
+      Paths_hid_examples
+  autogen-modules:
+      Paths_hid_examples
+  hs-source-dirs:
+      ch05
+  other-extensions:
+      OverloadedStrings
+      ViewPatterns
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
+  build-depends:
+      base >=4.12
+    , mtl >=2.0 && <2.3
+    , text
+  default-language: Haskell2010
+
 executable hello
   main-is: intro/hello.hs
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
+  build-depends:
+      base >=4.12
+  default-language: Haskell2010
+
+executable ioref
+  main-is: ioref.hs
+  other-modules:
+      Paths_hid_examples
+  autogen-modules:
+      Paths_hid_examples
+  hs-source-dirs:
+      ch05
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
+  build-depends:
+      base >=4.12
+  default-language: Haskell2010
+
+executable maybe
+  main-is: maybe.hs
+  other-modules:
+      Paths_hid_examples
+  autogen-modules:
+      Paths_hid_examples
+  hs-source-dirs:
+      ch05
   ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
   build-depends:
       base >=4.12
@@ -139,6 +241,20 @@ executable person-text
     , text-show
   default-language: Haskell2010
 
+executable prefix-postfix
+  main-is: prefix-postfix.hs
+  other-modules:
+      Expr
+      ShuntingYard
+  hs-source-dirs:
+      expr
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
+  build-depends:
+      base >=4.12
+    , mtl >=2.0 && <2.3
+    , text-show >=3.0 && <4
+  default-language: Haskell2010
+
 executable radar
   main-is: Main.hs
   other-modules:
@@ -152,6 +268,22 @@ executable radar
   build-depends:
       base >=4.12
     , fmt
+  default-language: Haskell2010
+
+executable reader
+  main-is: reader.hs
+  other-modules:
+      Paths_hid_examples
+  autogen-modules:
+      Paths_hid_examples
+  hs-source-dirs:
+      ch05
+  other-extensions:
+      NamedFieldPuns
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
+  build-depends:
+      base >=4.12
+    , mtl >=2.0 && <2.3
   default-language: Haskell2010
 
 executable stockquotes
@@ -188,6 +320,20 @@ executable stockquotes
     , time
   default-language: Haskell2010
 
+executable sumlist
+  main-is: sumlist.hs
+  other-modules:
+      Paths_hid_examples
+  autogen-modules:
+      Paths_hid_examples
+  hs-source-dirs:
+      ch05
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
+  build-depends:
+      base >=4.12
+    , mtl >=2.0 && <2.3
+  default-language: Haskell2010
+
 executable vocab1
   main-is: vocab1.hs
   hs-source-dirs:
@@ -219,6 +365,21 @@ executable vocab3
       base >=4.12
     , fmt
     , text
+  default-language: Haskell2010
+
+executable weapons
+  main-is: weapons.hs
+  other-modules:
+      Paths_hid_examples
+  autogen-modules:
+      Paths_hid_examples
+  hs-source-dirs:
+      ch05
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
+  build-depends:
+      base >=4.12
+    , mtl >=2.0 && <2.3
+    , random ==1.2.*
   default-language: Haskell2010
 
 test-suite expr-simple-test
