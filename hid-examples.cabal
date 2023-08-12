@@ -113,6 +113,19 @@ library shunting-yard
     , text-show >=3.0 && <4
   default-language: Haskell2010
 
+executable countzeros
+  main-is: countzeros.hs
+  other-modules:
+      Paths_hid_examples
+  autogen-modules:
+      Paths_hid_examples
+  hs-source-dirs:
+      ch05
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
+  build-depends:
+      base >=4.12
+  default-language: Haskell2010
+
 executable dicegame
   main-is: dicegame.hs
   other-modules:
@@ -126,6 +139,85 @@ executable dicegame
       base >=4.12
     , mtl >=2.0 && <2.3
     , random ==1.2.*
+  default-language: Haskell2010
+
+executable du
+  main-is: Main.hs
+  other-modules:
+      App
+      AppRWST
+      AppRWSTST
+      AppTypes
+      DirTree
+      DiskUsage
+      FileCounter
+      Utils
+      Paths_hid_examples
+  autogen-modules:
+      Paths_hid_examples
+  hs-source-dirs:
+      du
+  default-extensions:
+      RecordWildCards
+      NamedFieldPuns
+      OverloadedStrings
+  other-extensions:
+      GeneralizedNewtypeDeriving
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
+  build-depends:
+      base >=4.12
+    , directory ==1.3.*
+    , extra >=1.5 && <1.8
+    , filepath >=1.4.1 && <1.5
+    , mtl >=2.0 && <2.3
+    , optparse-applicative >=0.14 && <0.17
+    , text
+    , text-show >=3.0 && <4
+    , unix-compat ==0.5.*
+  default-language: Haskell2010
+
+executable evalrpn1
+  main-is: evalrpn1.hs
+  other-modules:
+      EvalRPN
+  hs-source-dirs:
+      expr/rpn
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
+  build-depends:
+      base >=4.12
+    , mtl >=2.0 && <2.3
+  default-language: Haskell2010
+
+executable evalrpn2
+  main-is: evalrpn2.hs
+  other-modules:
+      EvalRPNTrans
+  hs-source-dirs:
+      expr/rpn
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
+  build-depends:
+      base >=4.12
+    , mtl >=2.0 && <2.3
+  default-language: Haskell2010
+
+executable evalrpn3
+  main-is: evalrpn3.hs
+  other-modules:
+      MyMaybeT
+      EvalRPNTrans2
+  hs-source-dirs:
+      expr/rpn
+  other-extensions:
+      FlexibleInstances
+      MultiParamTypeClasses
+      UndecidableInstances
+      InstanceSigs
+      LambdaCase
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
+  build-depends:
+      base >=4.12
+    , mtl >=2.0 && <2.3
+    , transformers ==0.5.*
   default-language: Haskell2010
 
 executable filecount
@@ -320,6 +412,19 @@ executable stockquotes
     , time
   default-language: Haskell2010
 
+executable stref
+  main-is: stref.hs
+  other-modules:
+      Paths_hid_examples
+  autogen-modules:
+      Paths_hid_examples
+  hs-source-dirs:
+      ch05
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
+  build-depends:
+      base >=4.12
+  default-language: Haskell2010
+
 executable sumlist
   main-is: sumlist.hs
   other-modules:
@@ -405,4 +510,17 @@ test-suite radar-test
       base >=4.12
     , radar-lib
     , random
+  default-language: Haskell2010
+
+test-suite shunting-yard-test
+  type: exitcode-stdio-1.0
+  main-is: Test2.hs
+  hs-source-dirs:
+      tests/expr
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
+  build-depends:
+      base >=4.12
+    , shunting-yard
+    , text
+    , text-show >=3.0 && <4
   default-language: Haskell2010
