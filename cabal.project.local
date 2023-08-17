@@ -1,6 +1,4 @@
 write-ghc-environment-files: always
 tests: True
-allow-newer: base
-allow-newer: Cabal
-allow-newer: random
+with-compiler: ghc-9.0.2
 -- flags: with-pg

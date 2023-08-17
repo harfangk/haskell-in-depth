@@ -109,8 +109,8 @@ library shunting-yard
   build-depends:
       base >=4.12
     , expr-simple
-    , mtl >=2.0 && <2.3
-    , text-show >=3.0 && <4
+    , mtl
+    , text-show
   default-language: Haskell2010
 
 executable countzeros
@@ -137,8 +137,22 @@ executable dicegame
   ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
   build-depends:
       base >=4.12
-    , mtl >=2.0 && <2.3
-    , random ==1.2.*
+    , mtl
+    , random
+  default-language: Haskell2010
+
+executable div
+  main-is: div.hs
+  other-modules:
+      Paths_hid_examples
+  autogen-modules:
+      Paths_hid_examples
+  hs-source-dirs:
+      ch07
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
+  build-depends:
+      base >=4.12
+    , exceptions
   default-language: Haskell2010
 
 executable du
@@ -166,14 +180,14 @@ executable du
   ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
   build-depends:
       base >=4.12
-    , directory ==1.3.*
-    , extra >=1.5 && <1.8
-    , filepath >=1.4.1 && <1.5
-    , mtl >=2.0 && <2.3
-    , optparse-applicative >=0.14 && <0.17
+    , directory
+    , extra
+    , filepath
+    , mtl
+    , optparse-applicative
     , text
-    , text-show >=3.0 && <4
-    , unix-compat ==0.5.*
+    , text-show
+    , unix-compat
   default-language: Haskell2010
 
 executable evalrpn1
@@ -185,7 +199,7 @@ executable evalrpn1
   ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
   build-depends:
       base >=4.12
-    , mtl >=2.0 && <2.3
+    , mtl
   default-language: Haskell2010
 
 executable evalrpn2
@@ -197,7 +211,7 @@ executable evalrpn2
   ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
   build-depends:
       base >=4.12
-    , mtl >=2.0 && <2.3
+    , mtl
   default-language: Haskell2010
 
 executable evalrpn3
@@ -216,8 +230,8 @@ executable evalrpn3
   ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
   build-depends:
       base >=4.12
-    , mtl >=2.0 && <2.3
-    , transformers ==0.5.*
+    , mtl
+    , transformers
   default-language: Haskell2010
 
 executable filecount
@@ -231,7 +245,7 @@ executable filecount
   ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
   build-depends:
       base >=4.12
-    , extra >=1.5 && <1.8
+    , extra
   default-language: Haskell2010
 
 executable gcd
@@ -245,7 +259,7 @@ executable gcd
   ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
   build-depends:
       base >=4.12
-    , mtl >=2.0 && <2.3
+    , mtl
   default-language: Haskell2010
 
 executable genSQL
@@ -262,7 +276,7 @@ executable genSQL
   ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
   build-depends:
       base >=4.12
-    , mtl >=2.0 && <2.3
+    , mtl
     , text
   default-language: Haskell2010
 
@@ -284,6 +298,23 @@ executable ioref
   ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
   build-depends:
       base >=4.12
+  default-language: Haskell2010
+
+executable logging
+  main-is: logging.hs
+  other-modules:
+      Paths_hid_examples
+  autogen-modules:
+      Paths_hid_examples
+  hs-source-dirs:
+      ch07
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
+  build-depends:
+      base >=4.12
+    , monad-logger
+    , mtl
+    , text
+    , transformers
   default-language: Haskell2010
 
 executable maybe
@@ -343,8 +374,8 @@ executable prefix-postfix
   ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
   build-depends:
       base >=4.12
-    , mtl >=2.0 && <2.3
-    , text-show >=3.0 && <4
+    , mtl
+    , text-show
   default-language: Haskell2010
 
 executable radar
@@ -375,7 +406,24 @@ executable reader
   ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
   build-depends:
       base >=4.12
-    , mtl >=2.0 && <2.3
+    , mtl
+  default-language: Haskell2010
+
+executable rpnexpr
+  main-is: rpnexpr.hs
+  other-modules:
+      EvalRPNExcept
+  hs-source-dirs:
+      expr/rpn
+  other-extensions:
+      OverloadedStrings
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
+  build-depends:
+      base >=4.12
+    , mtl
+    , text
+    , text-show
+    , transformers
   default-language: Haskell2010
 
 executable stockquotes
@@ -436,7 +484,42 @@ executable sumlist
   ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
   build-depends:
       base >=4.12
-    , mtl >=2.0 && <2.3
+    , mtl
+  default-language: Haskell2010
+
+executable suntimes
+  main-is: Main.hs
+  other-modules:
+      App
+      GeoCoordsReq
+      ProcessRequest
+      STExcept
+      SunTimes
+      Types
+      Paths_hid_examples
+  autogen-modules:
+      Paths_hid_examples
+  hs-source-dirs:
+      suntimes
+  default-extensions:
+      OverloadedStrings
+  other-extensions:
+      RecordWildCards
+      DeriveGeneric
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
+  build-depends:
+      aeson
+    , base >=4.12
+    , bytestring
+    , exceptions
+    , http-client
+    , mtl
+    , optparse-applicative
+    , req
+    , socks >=0.6.1
+    , text
+    , time
+    , transformers
   default-language: Haskell2010
 
 executable vocab1
@@ -483,8 +566,8 @@ executable weapons
   ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
   build-depends:
       base >=4.12
-    , mtl >=2.0 && <2.3
-    , random ==1.2.*
+    , mtl
+    , random
   default-language: Haskell2010
 
 test-suite expr-simple-test
@@ -522,5 +605,5 @@ test-suite shunting-yard-test
       base >=4.12
     , shunting-yard
     , text
-    , text-show >=3.0 && <4
+    , text-show
   default-language: Haskell2010
