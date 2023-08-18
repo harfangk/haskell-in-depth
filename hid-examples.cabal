@@ -88,6 +88,36 @@ library expr-simple
     , text-show
   default-language: Haskell2010
 
+library ipgen-lib
+  exposed-modules:
+      GenIP
+  hs-source-dirs:
+      ip/gen
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
+  build-depends:
+      base >=4.12
+    , hedgehog
+    , iplookup-lib
+  default-language: Haskell2010
+
+library iplookup-lib
+  exposed-modules:
+      IPTypes
+      LookupIP
+      ParseIP
+      FastLookup
+  hs-source-dirs:
+      ip/lookup
+  other-extensions:
+      TypeApplications
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans -Wno-incomplete-uni-patterns
+  build-depends:
+      base >=4.12
+    , exceptions
+    , fingertree
+    , split
+  default-language: Haskell2010
+
 library radar-lib
   exposed-modules:
       Radar
@@ -298,6 +328,35 @@ executable ioref
   ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
   build-depends:
       base >=4.12
+  default-language: Haskell2010
+
+executable ipgen
+  main-is: ip/gen/Main.hs
+  other-modules:
+      Paths_hid_examples
+  autogen-modules:
+      Paths_hid_examples
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
+  build-depends:
+      base >=4.12
+    , exceptions
+    , hedgehog
+    , ipgen-lib
+    , optparse-applicative
+  default-language: Haskell2010
+
+executable iplookup
+  main-is: ip/lookup/Main.hs
+  other-modules:
+      Paths_hid_examples
+  autogen-modules:
+      Paths_hid_examples
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
+  build-depends:
+      base >=4.12
+    , exceptions
+    , iplookup-lib
+    , optparse-applicative
   default-language: Haskell2010
 
 executable logging
@@ -581,6 +640,47 @@ test-suite expr-simple-test
     , expr-simple
     , hint
     , text-show
+  default-language: Haskell2010
+
+test-suite iplookup-doctest
+  type: exitcode-stdio-1.0
+  main-is: tests/iplookup-doctest/Doctests.hs
+  other-modules:
+      Paths_hid_examples
+  autogen-modules:
+      Paths_hid_examples
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
+  build-depends:
+      base >=4.12
+    , doctest
+    , split
+  default-language: Haskell2010
+
+test-suite iplookup-test
+  type: exitcode-stdio-1.0
+  main-is: Test.hs
+  other-modules:
+      GoldenTests
+      LookupIPSpec
+      ParseIPSpec
+      Props
+      Paths_hid_examples
+  autogen-modules:
+      Paths_hid_examples
+  hs-source-dirs:
+      tests/iplookup
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans -Wno-type-defaults
+  build-depends:
+      base >=4.12
+    , filepath
+    , hedgehog
+    , hspec
+    , ipgen-lib
+    , iplookup-lib
+    , tasty
+    , tasty-golden
+    , tasty-hedgehog
+    , tasty-hspec
   default-language: Haskell2010
 
 test-suite radar-test

@@ -269,20 +269,20 @@ executables:
         - mtl 
         - transformers 
         - text 
-    # # Chapter 8
-    # iplookup:
-    #     main: ip/lookup/Main.hs
-    #     dependencies:
-    #       - exceptions >= 0.10 && < 0.11
-    #       - optparse-applicative >= 0.14 && < 0.17
-    #       - iplookup-lib
-    # ipgen:
-    #     main: ip/gen/Main.hs
-    #     dependencies:
-    #       - ipgen-lib
-    #       - exceptions >= 0.10 && < 0.11
-    #       - optparse-applicative >= 0.14 && < 0.17
-    #       - hedgehog >= 0.5 && < 1.1
+    # Chapter 8
+    iplookup:
+        main: ip/lookup/Main.hs
+        dependencies:
+          - exceptions 
+          - optparse-applicative 
+          - iplookup-lib
+    ipgen:
+        main: ip/gen/Main.hs
+        dependencies:
+          - ipgen-lib
+          - exceptions 
+          - optparse-applicative
+          - hedgehog 
     # # Chapter 9
     # unboxed:
     #     main: ch09/unboxed.hs
@@ -767,30 +767,31 @@ internal-libraries:
           - text-show 
         default-extensions:
           - OverloadedStrings
-    # # Chapter 8
-    # iplookup-lib:
-    #     source-dirs: ip/lookup
-    #     exposed-modules:
-    #       - IPTypes
-    #       - LookupIP
-    #       - ParseIP
-    #       - FastLookup
-    #     other-modules: []
-    #     dependencies:
-    #       - split >= 0.2 && < 0.3
-    #       - fingertree >= 0.1 && < 0.2
-    #     other-extensions:
-    #       - TypeApplications
-    #     ghc-options:
-    #       - -Wno-incomplete-uni-patterns
-    # ipgen-lib:
-    #     source-dirs: ip/gen
-    #     exposed-modules:
-    #       - GenIP
-    #     other-modules: []
-    #     dependencies:
-    #       - iplookup-lib
-    #       - hedgehog >= 0.5 && < 1.1
+    # Chapter 8
+    iplookup-lib:
+      source-dirs: ip/lookup
+      exposed-modules:
+        - IPTypes
+        - LookupIP
+        - ParseIP
+        - FastLookup
+      other-modules: []
+      dependencies:
+        - split
+        - fingertree
+        - exceptions
+      other-extensions:
+        - TypeApplications
+      ghc-options:
+        - -Wno-incomplete-uni-patterns
+    ipgen-lib:
+      source-dirs: ip/gen
+      exposed-modules:
+        - GenIP
+      other-modules: []
+      dependencies:
+        - iplookup-lib
+        - hedgehog
     # # Chapter 9
     # isprime-lib:
     #   source-dirs: ch09/isprime
@@ -842,26 +843,27 @@ tests:
           - shunting-yard
           - text-show
           - text
-    # # Chapter 8
-    # iplookup-test:
-    #     main: Test.hs
-    #     source-dirs: tests/iplookup
-    #     dependencies:
-    #       - iplookup-lib
-    #       - ipgen-lib
-    #       - tasty >= 0.11 && < 1.5
-    #       - tasty-hspec >= 1.1 && < 1.2
-    #       - tasty-hedgehog >= 0.1 && < 1.1
-    #       - hedgehog >= 0.5 && < 1.1
-    #       - tasty-golden >= 2.3 && < 2.4
-    #       - filepath >= 1.4.1 && < 1.5
-    #     ghc-options:
-    #       - -Wno-type-defaults
-    # iplookup-doctest:
-    #   main: tests/iplookup-doctest/Doctests.hs
-    #   dependencies:
-    #     - doctest >= 0.12 && < 0.19
-    #     - split >= 0.2 && < 0.3
+    # Chapter 8
+    iplookup-test:
+      main: Test.hs
+      source-dirs: tests/iplookup
+      dependencies:
+        - iplookup-lib
+        - ipgen-lib
+        - tasty
+        - tasty-hspec 
+        - tasty-hedgehog 
+        - hspec
+        - hedgehog 
+        - tasty-golden 
+        - filepath 
+      ghc-options:
+        - -Wno-type-defaults
+    iplookup-doctest:
+      main: tests/iplookup-doctest/Doctests.hs
+      dependencies:
+        - doctest 
+        - split 
 
 # benchmarks:
     # Chapter 10
