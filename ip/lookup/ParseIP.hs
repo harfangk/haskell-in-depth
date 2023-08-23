@@ -6,6 +6,7 @@ module ParseIP where
 import Control.Applicative
 import Control.Monad
 import Data.Bits (shiftL, toIntegralSized)
+import Data.Char (digitToInt, isDigit)
 import Data.List.Split (splitOn)
 import Data.Maybe (catMaybes)
 import Data.Word
@@ -27,7 +28,7 @@ isLengthOf :: Int -> [a] -> Bool
 isLengthOf n xs = length xs == n
 
 buildIP :: [Word8] -> IP
-buildIP = buildIP_foldr
+buildIP = buildIP_foldl
 
 buildIP_foldr :: [Word8] -> IP
 buildIP_foldr = IP . fst . foldr go (0, 1)
@@ -51,10 +52,51 @@ buildIP_foldl_shl = IP . foldl (\s b -> shiftL s 8 + fromIntegral b) 0
 -- >>> parseIP "not an IP address"
 -- Nothing
 parseIP :: String -> Maybe IP
-parseIP =
+parseIP = parseIPIterStrict
+
+parseIPMonadic :: String -> Maybe IP
+parseIPMonadic =
   guarded (4 `isLengthOf`) . splitOn "."
     >=> mapM (readMaybe @Integer >=> toIntegralSized)
     >=> pure . buildIP
+
+parseIPIter :: String -> Maybe IP
+parseIPIter cs = go cs 0 0 1 0
+  where
+    go :: String -> Int -> Int -> Int -> Int -> Maybe IP
+    go (c : cs') ip ipcomp ncomp ndigit
+      | isDigit c && ndigit < 3 = go cs' ip (addDigit ipcomp c) ncomp (ndigit + 1)
+      | c == '.' && ncomp < 4 && goodComp ndigit ipcomp = go cs' (addComp ip ipcomp) 0 (ncomp + 1) 0
+    go [] ip ipcomp ncomp ndigit
+      | ncomp == 4 && goodComp ndigit ipcomp = Just $ IP $ fromIntegral $ addComp ip ipcomp
+    go _ _ _ _ _ = Nothing
+
+    goodComp 1 _ = True
+    goodComp 2 _ = True
+    goodComp 3 ipcomp = ipcomp <= 255
+    goodComp _ _ = False
+
+    addComp ip ipcomp = shiftL ip 8 + ipcomp
+    addDigit ipcomp c = ipcomp * 10 + digitToInt c
+
+parseIPIterStrict :: String -> Maybe IP
+parseIPIterStrict cs = go cs 0 0 1 0
+  where
+    go :: String -> Int -> Int -> Int -> Int -> Maybe IP
+    go (c : cs') !ip !ipcomp !ncomp !ndigit
+      | isDigit c && ndigit < 3 = go cs' ip (addDigit ipcomp c) ncomp (ndigit + 1)
+      | c == '.' && ncomp < 4 && goodComp ndigit ipcomp = go cs' (addComp ip ipcomp) 0 (ncomp + 1) 0
+    go [] !ip !ipcomp !ncomp !ndigit
+      | ncomp == 4 && goodComp ndigit ipcomp = Just $ IP $ fromIntegral $ addComp ip ipcomp
+    go _ _ _ _ _ = Nothing
+
+    goodComp 1 _ = True
+    goodComp 2 _ = True
+    goodComp 3 !ipcomp = ipcomp <= 255
+    goodComp _ _ = False
+
+    addComp !ip !ipcomp = shiftL ip 8 + ipcomp
+    addDigit !ipcomp !c = ipcomp * 10 + digitToInt c
 
 parseIPRange :: String -> Maybe IPRange
 parseIPRange =

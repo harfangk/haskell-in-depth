@@ -370,6 +370,18 @@ executable iplookup
     , optparse-applicative
   default-language: Haskell2010
 
+executable iplookup-simulation
+  main-is: ip/iplookup-simulation.hs
+  other-modules:
+      Paths_hid_examples
+  autogen-modules:
+      Paths_hid_examples
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
+  build-depends:
+      base >=4.12
+    , iplookup-lib
+  default-language: Haskell2010
+
 executable isprime
   main-is: Main.hs
   other-modules:
@@ -744,4 +756,42 @@ test-suite shunting-yard-test
     , shunting-yard
     , text
     , text-show
+  default-language: Haskell2010
+
+benchmark iplookup-bench
+  type: exitcode-stdio-1.0
+  main-is: Bench.hs
+  other-modules:
+      BenchBuildIP
+      BenchBuildIPGroups
+      BenchLookupIP
+      BenchParseIP
+      BenchRanges
+      Data
+      NFUtils
+      Paths_hid_examples
+  autogen-modules:
+      Paths_hid_examples
+  hs-source-dirs:
+      benchmarks/iplookup
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
+  build-depends:
+      base >=4.12
+    , criterion
+    , deepseq
+    , iplookup-lib
+  default-language: Haskell2010
+
+benchmark primcheck
+  type: exitcode-stdio-1.0
+  main-is: benchmarks/primcheck.hs
+  other-modules:
+      Paths_hid_examples
+  autogen-modules:
+      Paths_hid_examples
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
+  build-depends:
+      base >=4.12
+    , criterion
+    , isprime-lib
   default-language: Haskell2010
