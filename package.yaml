@@ -271,31 +271,31 @@ executables:
         - text 
     # Chapter 8
     iplookup:
-        main: ip/lookup/Main.hs
-        dependencies:
-          - exceptions 
-          - optparse-applicative 
-          - iplookup-lib
+      main: ip/lookup/Main.hs
+      dependencies:
+        - exceptions 
+        - optparse-applicative 
+        - iplookup-lib
     ipgen:
-        main: ip/gen/Main.hs
-        dependencies:
-          - ipgen-lib
-          - exceptions 
-          - optparse-applicative
-          - hedgehog 
-    # # Chapter 9
-    # unboxed:
-    #     main: ch09/unboxed.hs
-    #     other-extensions:
-    #       - UnboxedTuples
-    #       - UnboxedSums
-    # isprime:
-    #   source-dirs: ch09/isprime
-    #   main: Main.hs
-    #   other-modules: [IsPrime]
-    #   dependencies:
-    #     - isprime-lib
-    #     - timeit >= 2.0 && < 2.1
+      main: ip/gen/Main.hs
+      dependencies:
+        - ipgen-lib
+        - exceptions 
+        - optparse-applicative
+        - hedgehog 
+    # Chapter 9
+    unboxed:
+      main: ch09/unboxed.hs
+      other-extensions:
+        - UnboxedTuples
+        - UnboxedSums
+    isprime:
+      source-dirs: ch09/isprime
+      main: Main.hs
+      other-modules: [IsPrime]
+      dependencies:
+        - isprime-lib
+        - timeit
     # # Chapter 10
     # iplookup-simulation:
     #     main: ip/iplookup-simulation.hs
@@ -792,13 +792,13 @@ internal-libraries:
       dependencies:
         - iplookup-lib
         - hedgehog
-    # # Chapter 9
-    # isprime-lib:
-    #   source-dirs: ch09/isprime
-    #   exposed-modules:
-    #     - IsPrime
-    #     - IsPrimeUnfolded
-    #   other-modules: []
+    # Chapter 9
+    isprime-lib:
+      source-dirs: ch09/isprime
+      exposed-modules:
+        - IsPrime
+        - IsPrimeUnfolded
+      other-modules: []
     # # Chapter 12
     # rpc-lib:
     #   source-dirs: ch12/rpc/lib

@@ -118,6 +118,17 @@ library iplookup-lib
     , split
   default-language: Haskell2010
 
+library isprime-lib
+  exposed-modules:
+      IsPrime
+      IsPrimeUnfolded
+  hs-source-dirs:
+      ch09/isprime
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
+  build-depends:
+      base >=4.12
+  default-language: Haskell2010
+
 library radar-lib
   exposed-modules:
       Radar
@@ -359,6 +370,19 @@ executable iplookup
     , optparse-applicative
   default-language: Haskell2010
 
+executable isprime
+  main-is: Main.hs
+  other-modules:
+      IsPrime
+  hs-source-dirs:
+      ch09/isprime
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
+  build-depends:
+      base >=4.12
+    , isprime-lib
+    , timeit
+  default-language: Haskell2010
+
 executable logging
   main-is: logging.hs
   other-modules:
@@ -579,6 +603,20 @@ executable suntimes
     , text
     , time
     , transformers
+  default-language: Haskell2010
+
+executable unboxed
+  main-is: ch09/unboxed.hs
+  other-modules:
+      Paths_hid_examples
+  autogen-modules:
+      Paths_hid_examples
+  other-extensions:
+      UnboxedTuples
+      UnboxedSums
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
+  build-depends:
+      base >=4.12
   default-language: Haskell2010
 
 executable vocab1
