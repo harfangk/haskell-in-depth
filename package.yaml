@@ -301,78 +301,78 @@ executables:
       main: ip/iplookup-simulation.hs
       dependencies:
         - iplookup-lib
-    # # Chapter 11
-    # temp-proxies:
-    #     source-dirs: ch11/temperature
-    #     main: temp-proxies.hs
-    #     other-modules: [TempPhantom, UnitNameProxies]
-    #     other-extensions:
-    #       - GeneralizedNewtypeDeriving
-    #       - ScopedTypeVariables
-    #       - PolyKinds
-    #       - InstanceSigs
-    # temp-type-apps:
-    #     source-dirs: ch11/temperature
-    #     main: temp-type-apps.hs
-    #     other-modules: [TempPhantom, UnitNameTypeApps]
-    #     other-extensions:
-    #       - GeneralizedNewtypeDeriving
-    #       - ScopedTypeVariables
-    #       - PolyKinds
-    #       - AllowAmbiguousTypes
-    #       - TypeApplications
-    # type-operators:
-    #     main: ch11/type-operators.hs
-    #     other-modules: []
-    #     other-extensions:
-    #       - TypeOperators
-    #       - NoStarIsType
-    # temp-kinds:
-    #     source-dirs: ch11/temperature
-    #     main: temp-kinds.hs
-    #     other-modules: []
-    #     ghc-options: -Wno-unticked-promoted-constructors
-    #     other-extensions:
-    #       - GeneralizedNewtypeDeriving
-    #       - ScopedTypeVariables
-    #       - PolyKinds
-    #       - AllowAmbiguousTypes
-    #       - TypeApplications
-    # type-lits:
-    #     source-dirs: ch11/type-lits
-    #     main: Main.hs
-    #     other-modules: [Pointers, SuffixedStrings]
-    #     other-extensions:
-    #       - DataKinds
-    #       - KindSignatures
-    #       - ScopedTypeVariables
-    # type-families:
-    #     source-dirs: ch11/type-families
-    #     main: Main.hs
-    #     other-extensions:
-    #       - TypeFamilies
-    #       - FlexibleInstances
-    #     ghc-options:
-    #       -Wno-type-defaults
-    #     dependencies:
-    #       - containers >= 0.5 && < 0.7
-    # dynvalues-gadt:
-    #     main: ch11/dynvalues-gadt.hs
-    #     other-extensions:
-    #       - GADTs
-    # expr-gadt:
-    #     main: expr/gadts/Main.hs
-    #     other-extensions:
-    #       - GADTSyntax
-    #       - GADTs
-    #     ghc-options:
-    #       - -Wno-type-defaults
-    #       - -Wno-missing-signatures
-    # nummod-rank-n:
-    #     source-dirs: ch11/nummod-rank-n/
-    #     main: Main.hs
-    #     other-extensions:
-    #       - RankNTypes
+    # Chapter 11
+    temp-proxies:
+      source-dirs: ch11/temperature
+      main: temp-proxies.hs
+      other-modules: [TempPhantom, UnitNameProxies]
+      other-extensions:
+        - GeneralizedNewtypeDeriving
+        - ScopedTypeVariables
+        - PolyKinds
+        - InstanceSigs
+    temp-type-apps:
+      source-dirs: ch11/temperature
+      main: temp-type-apps.hs
+      other-modules: [TempPhantom, UnitNameTypeApps]
+      other-extensions:
+        - GeneralizedNewtypeDeriving
+        - ScopedTypeVariables
+        - PolyKinds
+        - AllowAmbiguousTypes
+        - TypeApplications
+    type-operators:
+      main: ch11/type-operators.hs
+      other-modules: []
+      other-extensions:
+        - TypeOperators
+        - NoStarIsType
+    temp-kinds:
+      source-dirs: ch11/temperature
+      main: temp-kinds.hs
+      other-modules: []
+      ghc-options: -Wno-unticked-promoted-constructors
+      other-extensions:
+        - GeneralizedNewtypeDeriving
+        - ScopedTypeVariables
+        - PolyKinds
+        - AllowAmbiguousTypes
+        - TypeApplications
+    type-lits:
+      source-dirs: ch11/type-lits
+      main: Main.hs
+      other-modules: [Pointers, SuffixedStrings]
+      other-extensions:
+        - DataKinds
+        - KindSignatures
+        - ScopedTypeVariables
+    type-families:
+      source-dirs: ch11/type-families
+      main: Main.hs
+      other-extensions:
+        - TypeFamilies
+        - FlexibleInstances
+      ghc-options:
+        -Wno-type-defaults
+      dependencies:
+        - containers >= 0.5 && < 0.7
+    dynvalues-gadt:
+      main: ch11/dynvalues-gadt.hs
+      other-extensions:
+        - GADTs
+    expr-gadt:
+      main: expr/gadts/Main.hs
+      other-extensions:
+        - GADTSyntax
+        - GADTs
+      ghc-options:
+        - -Wno-type-defaults
+        - -Wno-missing-signatures
+    nummod-rank-n:
+      source-dirs: ch11/nummod-rank-n/
+      main: Main.hs
+      other-extensions:
+        - RankNTypes
     # # Chapter 12
     # # 12.1
     # basic-deriv:
