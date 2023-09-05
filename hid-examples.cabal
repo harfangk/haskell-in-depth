@@ -271,6 +271,18 @@ executable basic-deriv
       base >=4.12
   default-language: Haskell2010
 
+executable chars
+  main-is: ch14/chars.hs
+  other-modules:
+      Paths_hid_examples
+  autogen-modules:
+      Paths_hid_examples
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
+  build-depends:
+      base >=4.12
+    , streaming
+  default-language: Haskell2010
+
 executable coerce
   main-is: coerce.hs
   other-modules:
@@ -284,6 +296,21 @@ executable coerce
       base >=4.12
   default-language: Haskell2010
 
+executable copy
+  main-is: ch14/copy.hs
+  other-modules:
+      Paths_hid_examples
+  autogen-modules:
+      Paths_hid_examples
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
+  build-depends:
+      base >=4.12
+    , filepath
+    , resourcet
+    , streaming
+    , streaming-bytestring
+  default-language: Haskell2010
+
 executable countzeros
   main-is: countzeros.hs
   other-modules:
@@ -295,6 +322,50 @@ executable countzeros
   ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
   build-depends:
       base >=4.12
+  default-language: Haskell2010
+
+executable covid
+  main-is: Main.hs
+  other-modules:
+      CovidCSVParser
+      CovidData
+      Paths_hid_examples
+  autogen-modules:
+      Paths_hid_examples
+  hs-source-dirs:
+      ch14/covid
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
+  build-depends:
+      attoparsec
+    , base >=4.12
+    , bytestring
+    , containers
+    , lens
+    , resourcet
+    , streaming
+    , streaming-bytestring
+    , streaming-utils
+    , text
+    , text-show
+    , time
+  default-language: Haskell2010
+
+executable csv-simple
+  main-is: ch14/csv-simple.hs
+  other-modules:
+      Paths_hid_examples
+  autogen-modules:
+      Paths_hid_examples
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
+  build-depends:
+      attoparsec
+    , base >=4.12
+    , bytestring
+    , resourcet
+    , streaming
+    , streaming-bytestring
+    , streaming-utils
+    , text
   default-language: Haskell2010
 
 executable dicegame
@@ -634,6 +705,18 @@ executable isprime
     , timeit
   default-language: Haskell2010
 
+executable lens-ex
+  main-is: ch14/lens-ex.hs
+  other-modules:
+      Paths_hid_examples
+  autogen-modules:
+      Paths_hid_examples
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
+  build-depends:
+      base >=4.12
+    , lens
+  default-language: Haskell2010
+
 executable logging
   main-is: logging.hs
   other-modules:
@@ -855,6 +938,17 @@ executable rpnexpr
     , transformers
   default-language: Haskell2010
 
+executable simple-streaming
+  main-is: ch14/simple-streaming.hs
+  other-modules:
+      Paths_hid_examples
+  autogen-modules:
+      Paths_hid_examples
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
+  build-depends:
+      base >=4.12
+  default-language: Haskell2010
+
 executable stockquotes
   main-is: Main.hs
   other-modules:
@@ -903,6 +997,17 @@ executable strategies
     , base >=4.12
   default-language: Haskell2010
 
+executable stream
+  main-is: ch14/stream.hs
+  other-modules:
+      Paths_hid_examples
+  autogen-modules:
+      Paths_hid_examples
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
+  build-depends:
+      base >=4.12
+  default-language: Haskell2010
+
 executable stref
   main-is: stref.hs
   other-modules:
@@ -928,6 +1033,21 @@ executable sumlist
   build-depends:
       base >=4.12
     , mtl
+  default-language: Haskell2010
+
+executable sumtab
+  main-is: ch14/sumtab.hs
+  other-modules:
+      Paths_hid_examples
+  autogen-modules:
+      Paths_hid_examples
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
+  build-depends:
+      base >=4.12
+    , extra
+    , streaming
+    , text
+    , text-show
   default-language: Haskell2010
 
 executable suntimes
