@@ -258,6 +258,17 @@ executable api-stage3
       base >=4.17
   default-language: Haskell2010
 
+executable async-exc
+  main-is: ch16/async-exc.hs
+  other-modules:
+      Paths_hid_examples
+  autogen-modules:
+      Paths_hid_examples
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans -threaded
+  build-depends:
+      base >=4.17
+  default-language: Haskell2010
+
 executable basic-deriv
   main-is: basic-deriv.hs
   other-modules:
@@ -292,6 +303,17 @@ executable coerce
   hs-source-dirs:
       ch12/deriv/
   ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
+  build-depends:
+      base >=4.17
+  default-language: Haskell2010
+
+executable conc-hello
+  main-is: ch16/conc-hello.hs
+  other-modules:
+      Paths_hid_examples
+  autogen-modules:
+      Paths_hid_examples
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans -threaded
   build-depends:
       base >=4.17
   default-language: Haskell2010
@@ -430,6 +452,67 @@ executable door-gen
   build-depends:
       base >=4.17
     , singletons-base
+  default-language: Haskell2010
+
+executable dots
+  main-is: ch16/dots.hs
+  other-modules:
+      Paths_hid_examples
+  autogen-modules:
+      Paths_hid_examples
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans -threaded
+  build-depends:
+      base >=4.17
+  default-language: Haskell2010
+
+executable dots-async
+  main-is: ch16/dots-async.hs
+  other-modules:
+      Paths_hid_examples
+  autogen-modules:
+      Paths_hid_examples
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans -threaded
+  build-depends:
+      async
+    , base >=4.17
+  default-language: Haskell2010
+
+executable dots-async-cancel
+  main-is: ch16/dots-async-cancel.hs
+  other-modules:
+      Paths_hid_examples
+  autogen-modules:
+      Paths_hid_examples
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans -threaded
+  build-depends:
+      async
+    , base >=4.17
+    , random
+  default-language: Haskell2010
+
+executable dots-async-interrupted
+  main-is: ch16/dots-async-interrupted.hs
+  other-modules:
+      Paths_hid_examples
+  autogen-modules:
+      Paths_hid_examples
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans -threaded
+  build-depends:
+      async
+    , base >=4.17
+  default-language: Haskell2010
+
+executable dots-stm
+  main-is: ch16/dots-stm.hs
+  other-modules:
+      Paths_hid_examples
+  autogen-modules:
+      Paths_hid_examples
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans -threaded
+  build-depends:
+      async
+    , base >=4.17
+    , stm
   default-language: Haskell2010
 
 executable du
@@ -692,6 +775,17 @@ executable hello-th
     , template-haskell
   default-language: Haskell2010
 
+executable interleaving
+  main-is: ch16/interleaving.hs
+  other-modules:
+      Paths_hid_examples
+  autogen-modules:
+      Paths_hid_examples
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans -threaded
+  build-depends:
+      base >=4.17
+  default-language: Haskell2010
+
 executable ioref
   main-is: ioref.hs
   other-modules:
@@ -813,6 +907,18 @@ executable mstr-literals
     , template-haskell
   default-language: Haskell2010
 
+executable mvar-deadlocks
+  main-is: ch16/mvar-deadlocks.hs
+  other-modules:
+      Paths_hid_examples
+  autogen-modules:
+      Paths_hid_examples
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans -threaded -Wno-unused-do-bind
+  build-depends:
+      async
+    , base >=4.17
+  default-language: Haskell2010
+
 executable newtype
   main-is: newtype.hs
   other-modules:
@@ -873,6 +979,19 @@ executable opaleye
       , text-show
   else
     main-is: empty/Main.hs
+
+executable ordered-threads
+  main-is: ch16/ordered-threads.hs
+  other-modules:
+      Paths_hid_examples
+  autogen-modules:
+      Paths_hid_examples
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans -threaded
+  build-depends:
+      async
+    , base >=4.17
+    , stm
+  default-language: Haskell2010
 
 executable person-derived
   main-is: derived-show.hs
@@ -997,6 +1116,20 @@ executable projectors
       base >=4.17
     , template-haskell
     , template-haskell-compat-v0208
+  default-language: Haskell2010
+
+executable pub-sub
+  main-is: ch16/pub-sub.hs
+  other-modules:
+      Paths_hid_examples
+  autogen-modules:
+      Paths_hid_examples
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans -threaded
+  build-depends:
+      async
+    , base >=4.17
+    , stm
+    , stm-chans
   default-language: Haskell2010
 
 executable radar
@@ -1130,6 +1263,32 @@ executable stref
       base >=4.17
   default-language: Haskell2010
 
+executable sum-numbers
+  main-is: ch16/sum-numbers.hs
+  other-modules:
+      Paths_hid_examples
+  autogen-modules:
+      Paths_hid_examples
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans -threaded
+  build-depends:
+      async
+    , base >=4.17
+  default-language: Haskell2010
+
+executable sum-numbers-many-workers
+  main-is: ch16/sum-numbers-many-workers.hs
+  other-modules:
+      Paths_hid_examples
+  autogen-modules:
+      Paths_hid_examples
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans -threaded
+  build-depends:
+      async
+    , base >=4.17
+    , stm
+    , stm-chans
+  default-language: Haskell2010
+
 executable sumlist
   main-is: sumlist.hs
   other-modules:
@@ -1242,6 +1401,18 @@ executable temp-type-apps
   ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans
   build-depends:
       base >=4.17
+  default-language: Haskell2010
+
+executable tree-async
+  main-is: ch16/tree-async.hs
+  other-modules:
+      Paths_hid_examples
+  autogen-modules:
+      Paths_hid_examples
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans -threaded
+  build-depends:
+      async
+    , base >=4.17
   default-language: Haskell2010
 
 executable type-families
@@ -1375,6 +1546,18 @@ executable vocab3
       base >=4.17
     , fmt
     , text
+  default-language: Haskell2010
+
+executable wait-completion
+  main-is: ch16/wait-completion.hs
+  other-modules:
+      Paths_hid_examples
+  autogen-modules:
+      Paths_hid_examples
+  ghc-options: -Wall -Werror -Wcompat -Widentities -Wincomplete-uni-patterns -Wincomplete-record-updates -Wno-unused-top-binds -Wno-orphans -threaded
+  build-depends:
+      base >=4.17
+    , random
   default-language: Haskell2010
 
 executable weapons
