@@ -1,2 +1,508 @@
 cradle:
-  stack: {component: "hid-examples:exe:hello"}
+  cabal:
+    - path: "./"
+      component: "lib:hid-examples"
+
+    - path: "ch02"
+      component: "hid-examples:lib:contexts"
+
+    - path: "expr"
+      component: "hid-examples:lib:expr-simple"
+
+    - path: "ip/gen"
+      component: "hid-examples:lib:ipgen-lib"
+
+    - path: "ip/lookup"
+      component: "hid-examples:lib:iplookup-lib"
+
+    - path: "ch09/isprime"
+      component: "hid-examples:lib:isprime-lib"
+
+    - path: "ch02/radar"
+      component: "hid-examples:lib:radar-lib"
+
+    - path: "ch12/rpc/lib"
+      component: "hid-examples:lib:rpc-lib"
+
+    - path: "expr"
+      component: "hid-examples:lib:shunting-yard"
+
+    - path: "./ch13/api/ApiServant.hs"
+      component: "hid-examples:exe:api-servant"
+
+    - path: "./ch13/api/Api0.hs"
+      component: "hid-examples:exe:api-stage0"
+
+    - path: "./ch13/api/Api1.hs"
+      component: "hid-examples:exe:api-stage1"
+
+    - path: "./ch13/api/Api2.hs"
+      component: "hid-examples:exe:api-stage2"
+
+    - path: "./ch13/api/Api3.hs"
+      component: "hid-examples:exe:api-stage3"
+
+    - path: "ch12/deriv/basic-deriv.hs"
+      component: "hid-examples:exe:basic-deriv"
+
+    - path: "./ch14/chars.hs"
+      component: "hid-examples:exe:chars"
+
+    - path: "ch12/deriv/coerce.hs"
+      component: "hid-examples:exe:coerce"
+
+    - path: "./ch14/copy.hs"
+      component: "hid-examples:exe:copy"
+
+    - path: "ch05/countzeros.hs"
+      component: "hid-examples:exe:countzeros"
+
+    - path: "ch14/covid/Main.hs"
+      component: "hid-examples:exe:covid"
+
+    - path: "ch14/covid/CovidCSVParser.hs"
+      component: "hid-examples:exe:covid"
+
+    - path: "ch14/covid/CovidData.hs"
+      component: "hid-examples:exe:covid"
+
+    - path: "./ch14/csv-simple.hs"
+      component: "hid-examples:exe:csv-simple"
+
+    - path: "ch05/dicegame.hs"
+      component: "hid-examples:exe:dicegame"
+
+    - path: "ch07/div.hs"
+      component: "hid-examples:exe:div"
+
+    - path: "./ch13/doors/SingManual.hs"
+      component: "hid-examples:exe:door"
+
+    - path: "./ch13/doors/SingGen.hs"
+      component: "hid-examples:exe:door-gen"
+
+    - path: "du/Main.hs"
+      component: "hid-examples:exe:du"
+
+    - path: "du/App.hs"
+      component: "hid-examples:exe:du"
+
+    - path: "du/AppRWST.hs"
+      component: "hid-examples:exe:du"
+
+    - path: "du/AppRWSTST.hs"
+      component: "hid-examples:exe:du"
+
+    - path: "du/AppTypes.hs"
+      component: "hid-examples:exe:du"
+
+    - path: "du/DirTree.hs"
+      component: "hid-examples:exe:du"
+
+    - path: "du/DiskUsage.hs"
+      component: "hid-examples:exe:du"
+
+    - path: "du/FileCounter.hs"
+      component: "hid-examples:exe:du"
+
+    - path: "du/Utils.hs"
+      component: "hid-examples:exe:du"
+
+    - path: "./ch11/dynvalues-gadt.hs"
+      component: "hid-examples:exe:dynvalues-gadt"
+
+    - path: "ch13/elevator/UseSafe.hs"
+      component: "hid-examples:exe:elevator"
+
+    - path: "ch13/elevator/Elevator/LowLevel.hs"
+      component: "hid-examples:exe:elevator"
+
+    - path: "ch13/elevator/Elevator/Safe.hs"
+      component: "hid-examples:exe:elevator"
+
+    - path: "ch13/elevator/Elevator/Safe/Floor.hs"
+      component: "hid-examples:exe:elevator"
+
+    - path: "ch13/elevator/Elevator/Safe/Operations.hs"
+      component: "hid-examples:exe:elevator"
+
+    - path: "ch13/elevator/Elevator/Safe/Moves.hs"
+      component: "hid-examples:exe:elevator"
+
+    - path: "expr/rpn/evalrpn1.hs"
+      component: "hid-examples:exe:evalrpn1"
+
+    - path: "expr/rpn/EvalRPN.hs"
+      component: "hid-examples:exe:evalrpn1"
+
+    - path: "expr/rpn/evalrpn2.hs"
+      component: "hid-examples:exe:evalrpn2"
+
+    - path: "expr/rpn/EvalRPNTrans.hs"
+      component: "hid-examples:exe:evalrpn2"
+
+    - path: "expr/rpn/evalrpn3.hs"
+      component: "hid-examples:exe:evalrpn3"
+
+    - path: "expr/rpn/MyMaybeT.hs"
+      component: "hid-examples:exe:evalrpn3"
+
+    - path: "expr/rpn/EvalRPNTrans2.hs"
+      component: "hid-examples:exe:evalrpn3"
+
+    - path: "./expr/gadts/Main.hs"
+      component: "hid-examples:exe:expr-gadt"
+
+    - path: "ch05/filecount.hs"
+      component: "hid-examples:exe:filecount"
+
+    - path: "ch05/gcd.hs"
+      component: "hid-examples:exe:gcd"
+
+    - path: "ch05/genSQL.hs"
+      component: "hid-examples:exe:genSQL"
+
+    - path: "ch12/genSQL/Main.hs"
+      component: "hid-examples:exe:generic-sql"
+
+    - path: "ch12/genSQL/GenericSQL.hs"
+      component: "hid-examples:exe:generic-sql"
+
+    - path: "ch15/hasql/empty/Main.hs"
+      component: "hid-examples:exe:hasql"
+
+    - path: "ch15/empty/Main.hs"
+      component: "hid-examples:exe:hasql"
+
+    - path: "ch15/hasql/FilmInfo/Data.hs"
+      component: "hid-examples:exe:hasql"
+
+    - path: "ch15/hasql/Statements.hs"
+      component: "hid-examples:exe:hasql"
+
+    - path: "ch15/hasql/Sessions.hs"
+      component: "hid-examples:exe:hasql"
+
+    - path: "ch15/hasql/DBActions.hs"
+      component: "hid-examples:exe:hasql"
+
+    - path: "ch15/FilmInfo/Data.hs"
+      component: "hid-examples:exe:hasql"
+
+    - path: "ch15/Statements.hs"
+      component: "hid-examples:exe:hasql"
+
+    - path: "ch15/Sessions.hs"
+      component: "hid-examples:exe:hasql"
+
+    - path: "ch15/DBActions.hs"
+      component: "hid-examples:exe:hasql"
+
+    - path: "ch15/empty/Main.hs"
+      component: "hid-examples:exe:hdbc"
+
+    - path: "ch15/FilmInfo/Data.hs"
+      component: "hid-examples:exe:hdbc"
+
+    - path: "./intro/hello.hs"
+      component: "hid-examples:exe:hello"
+
+    - path: "ch12/th/hello/Main.hs"
+      component: "hid-examples:exe:hello-th"
+
+    - path: "ch12/th/hello/Hello.hs"
+      component: "hid-examples:exe:hello-th"
+
+    - path: "ch05/ioref.hs"
+      component: "hid-examples:exe:ioref"
+
+    - path: "./ip/gen/Main.hs"
+      component: "hid-examples:exe:ipgen"
+
+    - path: "./ip/lookup/Main.hs"
+      component: "hid-examples:exe:iplookup"
+
+    - path: "./ip/iplookup-simulation.hs"
+      component: "hid-examples:exe:iplookup-simulation"
+
+    - path: "ch09/isprime/Main.hs"
+      component: "hid-examples:exe:isprime"
+
+    - path: "ch09/isprime/IsPrime.hs"
+      component: "hid-examples:exe:isprime"
+
+    - path: "./ch14/lens-ex.hs"
+      component: "hid-examples:exe:lens-ex"
+
+    - path: "ch07/logging.hs"
+      component: "hid-examples:exe:logging"
+
+    - path: "ch05/maybe.hs"
+      component: "hid-examples:exe:maybe"
+
+    - path: "ch12/th/mstr-lits/Main.hs"
+      component: "hid-examples:exe:mstr-literals"
+
+    - path: "ch12/th/mstr-lits/Str.hs"
+      component: "hid-examples:exe:mstr-literals"
+
+    - path: "ch12/deriv/newtype.hs"
+      component: "hid-examples:exe:newtype"
+
+    - path: "ch11/nummod-rank-n/Main.hs"
+      component: "hid-examples:exe:nummod-rank-n"
+
+    - path: "ch11/nummod-rank-n/NumUtils.hs"
+      component: "hid-examples:exe:nummod-rank-n"
+
+    - path: "ch02/person/derived-show.hs"
+      component: "hid-examples:exe:person-derived"
+
+    - path: "ch02/person/Person.hs"
+      component: "hid-examples:exe:person-derived"
+
+    - path: "ch02/person/implemented-show.hs"
+      component: "hid-examples:exe:person-implemented"
+
+    - path: "ch02/person/Person.hs"
+      component: "hid-examples:exe:person-implemented"
+
+    - path: "ch02/person/text-show.hs"
+      component: "hid-examples:exe:person-text"
+
+    - path: "ch02/person/Person.hs"
+      component: "hid-examples:exe:person-text"
+
+    - path: "ch15/empty/Main.hs"
+      component: "hid-examples:exe:pg-simple"
+
+    - path: "ch15/FilmInfo/Data.hs"
+      component: "hid-examples:exe:pg-simple"
+
+    - path: "ch15/FilmInfo/FromField.hs"
+      component: "hid-examples:exe:pg-simple"
+
+    - path: "ch12/rpc/ping/client.hs"
+      component: "hid-examples:exe:ping-client"
+
+    - path: "ch12/rpc/ping/PingCommon.hs"
+      component: "hid-examples:exe:ping-client"
+
+    - path: "ch12/rpc/ping/server.hs"
+      component: "hid-examples:exe:ping-server"
+
+    - path: "ch12/rpc/ping/PingCommon.hs"
+      component: "hid-examples:exe:ping-server"
+
+    - path: "ch12/th/predicates/Main.hs"
+      component: "hid-examples:exe:predicates"
+
+    - path: "ch12/th/predicates/Predicates.hs"
+      component: "hid-examples:exe:predicates"
+
+    - path: "expr/prefix-postfix.hs"
+      component: "hid-examples:exe:prefix-postfix"
+
+    - path: "expr/Expr.hs"
+      component: "hid-examples:exe:prefix-postfix"
+
+    - path: "expr/ShuntingYard.hs"
+      component: "hid-examples:exe:prefix-postfix"
+
+    - path: "ch12/th/projectors/Main.hs"
+      component: "hid-examples:exe:projectors"
+
+    - path: "ch12/th/projectors/Projectors.hs"
+      component: "hid-examples:exe:projectors"
+
+    - path: "ch02/radar/Main.hs"
+      component: "hid-examples:exe:radar"
+
+    - path: "ch02/radar/Radar.hs"
+      component: "hid-examples:exe:radar"
+
+    - path: "ch05/reader.hs"
+      component: "hid-examples:exe:reader"
+
+    - path: "expr/rpn/rpnexpr.hs"
+      component: "hid-examples:exe:rpnexpr"
+
+    - path: "expr/rpn/EvalRPNExcept.hs"
+      component: "hid-examples:exe:rpnexpr"
+
+    - path: "./ch14/simple-streaming.hs"
+      component: "hid-examples:exe:simple-streaming"
+
+    - path: "stockquotes/Main.hs"
+      component: "hid-examples:exe:stockquotes"
+
+    - path: "stockquotes/Charts.hs"
+      component: "hid-examples:exe:stockquotes"
+
+    - path: "stockquotes/HtmlReport.hs"
+      component: "hid-examples:exe:stockquotes"
+
+    - path: "stockquotes/Params.hs"
+      component: "hid-examples:exe:stockquotes"
+
+    - path: "stockquotes/QuoteData.hs"
+      component: "hid-examples:exe:stockquotes"
+
+    - path: "stockquotes/StatReport.hs"
+      component: "hid-examples:exe:stockquotes"
+
+    - path: "ch12/deriv/strategies.hs"
+      component: "hid-examples:exe:strategies"
+
+    - path: "./ch14/stream.hs"
+      component: "hid-examples:exe:stream"
+
+    - path: "ch05/stref.hs"
+      component: "hid-examples:exe:stref"
+
+    - path: "ch05/sumlist.hs"
+      component: "hid-examples:exe:sumlist"
+
+    - path: "./ch14/sumtab.hs"
+      component: "hid-examples:exe:sumtab"
+
+    - path: "suntimes/Main.hs"
+      component: "hid-examples:exe:suntimes"
+
+    - path: "suntimes/App.hs"
+      component: "hid-examples:exe:suntimes"
+
+    - path: "suntimes/GeoCoordsReq.hs"
+      component: "hid-examples:exe:suntimes"
+
+    - path: "suntimes/ProcessRequest.hs"
+      component: "hid-examples:exe:suntimes"
+
+    - path: "suntimes/STExcept.hs"
+      component: "hid-examples:exe:suntimes"
+
+    - path: "suntimes/SunTimes.hs"
+      component: "hid-examples:exe:suntimes"
+
+    - path: "suntimes/Types.hs"
+      component: "hid-examples:exe:suntimes"
+
+    - path: "ch11/temperature/temp-kinds.hs"
+      component: "hid-examples:exe:temp-kinds"
+
+    - path: "ch11/temperature/temp-proxies.hs"
+      component: "hid-examples:exe:temp-proxies"
+
+    - path: "ch11/temperature/TempPhantom.hs"
+      component: "hid-examples:exe:temp-proxies"
+
+    - path: "ch11/temperature/UnitNameProxies.hs"
+      component: "hid-examples:exe:temp-proxies"
+
+    - path: "ch11/temperature/temp-type-apps.hs"
+      component: "hid-examples:exe:temp-type-apps"
+
+    - path: "ch11/temperature/TempPhantom.hs"
+      component: "hid-examples:exe:temp-type-apps"
+
+    - path: "ch11/temperature/UnitNameTypeApps.hs"
+      component: "hid-examples:exe:temp-type-apps"
+
+    - path: "ch11/type-families/Main.hs"
+      component: "hid-examples:exe:type-families"
+
+    - path: "ch11/type-families/Graphs.hs"
+      component: "hid-examples:exe:type-families"
+
+    - path: "ch11/type-families/SimplifyWiden.hs"
+      component: "hid-examples:exe:type-families"
+
+    - path: "ch11/type-families/Unescape.hs"
+      component: "hid-examples:exe:type-families"
+
+    - path: "ch11/type-families/XListable.hs"
+      component: "hid-examples:exe:type-families"
+
+    - path: "ch11/type-lits/Main.hs"
+      component: "hid-examples:exe:type-lits"
+
+    - path: "ch11/type-lits/Pointers.hs"
+      component: "hid-examples:exe:type-lits"
+
+    - path: "ch11/type-lits/SuffixedStrings.hs"
+      component: "hid-examples:exe:type-lits"
+
+    - path: "./ch11/type-operators.hs"
+      component: "hid-examples:exe:type-operators"
+
+    - path: "./ch09/unboxed.hs"
+      component: "hid-examples:exe:unboxed"
+
+    - path: "ch13/elevator/UseUnsafe.hs"
+      component: "hid-examples:exe:unsafe-elevator"
+
+    - path: "ch13/elevator/Elevator/LowLevel.hs"
+      component: "hid-examples:exe:unsafe-elevator"
+
+    - path: "ch13/elevator/Elevator/Unsafe.hs"
+      component: "hid-examples:exe:unsafe-elevator"
+
+    - path: "ch12/deriv/via.hs"
+      component: "hid-examples:exe:via"
+
+    - path: "ch12/generics/view-generic.hs"
+      component: "hid-examples:exe:view-generic"
+
+    - path: "ch01/vocab1.hs"
+      component: "hid-examples:exe:vocab1"
+
+    - path: "ch01/vocab2.hs"
+      component: "hid-examples:exe:vocab2"
+
+    - path: "ch01/vocab3.hs"
+      component: "hid-examples:exe:vocab3"
+
+    - path: "ch05/weapons.hs"
+      component: "hid-examples:exe:weapons"
+
+    - path: "tests/expr"
+      component: "hid-examples:test:expr-simple-test"
+
+    - path: "./"
+      component: "hid-examples:test:iplookup-doctest"
+
+    - path: "tests/iplookup"
+      component: "hid-examples:test:iplookup-test"
+
+    - path: "tests/radar"
+      component: "hid-examples:test:radar-test"
+
+    - path: "tests/expr"
+      component: "hid-examples:test:shunting-yard-test"
+
+    - path: "benchmarks/iplookup/Bench.hs"
+      component: "hid-examples:bench:iplookup-bench"
+
+    - path: "benchmarks/iplookup/BenchBuildIP.hs"
+      component: "hid-examples:bench:iplookup-bench"
+
+    - path: "benchmarks/iplookup/BenchBuildIPGroups.hs"
+      component: "hid-examples:bench:iplookup-bench"
+
+    - path: "benchmarks/iplookup/BenchLookupIP.hs"
+      component: "hid-examples:bench:iplookup-bench"
+
+    - path: "benchmarks/iplookup/BenchParseIP.hs"
+      component: "hid-examples:bench:iplookup-bench"
+
+    - path: "benchmarks/iplookup/BenchRanges.hs"
+      component: "hid-examples:bench:iplookup-bench"
+
+    - path: "benchmarks/iplookup/Data.hs"
+      component: "hid-examples:bench:iplookup-bench"
+
+    - path: "benchmarks/iplookup/NFUtils.hs"
+      component: "hid-examples:bench:iplookup-bench"
+
+    - path: "./benchmarks/primcheck.hs"
+      component: "hid-examples:bench:primcheck"
