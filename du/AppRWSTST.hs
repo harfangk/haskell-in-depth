@@ -20,5 +20,5 @@ newtype MyApp logEntry state a = MyApp
     )
 
 runMyApp :: MyApp logEntry state a -> AppConfig -> state -> IO (a, [logEntry])
-runMyApp app config st =
-  evalStateT (runWriterT (runReaderT (runApp app) (initialEnv config))) st
+runMyApp app config =
+  evalStateT (runWriterT (runReaderT (runApp app) (initialEnv config)))
